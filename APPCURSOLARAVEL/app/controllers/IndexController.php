@@ -5,5 +5,10 @@ class IndexController extends BaseController
 	{
 		return View::make('/index');
 	}
+
+	public function actionEjemploBlade()
+	{
+		return View::make('/ejemploblade');
+	}
 }
 ?>
