@@ -29,7 +29,9 @@ class UsuarioController extends BaseController
 
 	public function actionVer()
 	{
-		return View::make('/usuario/ver');
+		$listaTUsuario=TUsuario::all();
+
+		return View::make('/usuario/ver', array('listaTUsuario' => $listaTUsuario));
 	}
 
 	public function actionEliminar()
