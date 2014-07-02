@@ -15,8 +15,6 @@
 			<li>{{HTML::linkAction('IndexController@actionIndex', 'Inicio')}}</li>
 			<li>{{HTML::linkAction('UsuarioController@actionRegistrar', 'Registrar usuario')}}</li>
 			<li>{{HTML::linkAction('UsuarioController@actionVer', 'Ver usuario')}}</li>
-			<li>{{HTML::linkAction('UsuarioController@actionEditar', 'Editar usuario')}}</li>
-			<li>{{HTML::linkAction('UsuarioController@actionEliminar', 'Eliminar usuario')}}</li>
 			<li>{{HTML::linkAction('IndexController@actionEjemploBlade', 'Ejemplo de blade')}}</li>
 		</ul>
 	</nav>

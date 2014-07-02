@@ -14,6 +14,7 @@
 			<th>FECHA DE REGISTRO</th>
 			<th>FECHA DE MODIFICACIÓN</th>
 			<th></th>
+			<th></th>
 		</thead>
 		<tbody>
 			@foreach($listaTUsuario as $value)
@@ -28,6 +29,7 @@
 					<td>{{$value->fechaRegistro}}</td>
 					<td>{{$value->fechaModificacion}}</td>
 					<td><input type="button" id="{{$value->idUsuario}}" value="Editar" onclick="editarUsuario(this.id);"></td>
+					<td><input type="button" id="{{$value->idUsuario}}" value="Eliminar" onclick="eliminarUsuario(this.id)"></td>
 				</tr>
 			@endforeach
 		</tbody>
@@ -36,6 +38,11 @@
 		function editarUsuario(idUsuario)
 		{
 			window.location.href="/APPCURSOLARAVEL/public/usuario/editar/"+idUsuario;
+		}
+
+		function eliminarUsuario(idUsuario)
+		{
+			window.location.href="/APPCURSOLARAVEL/public/usuario/eliminar/"+idUsuario;
 		}
 	</script>
 @stop

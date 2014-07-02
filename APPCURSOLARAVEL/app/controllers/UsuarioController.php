@@ -53,9 +53,13 @@ class UsuarioController extends BaseController
 		return View::make('/usuario/ver', array('listaTUsuario' => $listaTUsuario));
 	}
 
-	public function actionEliminar()
+	public function actionEliminar($idUsuario=null)
 	{
-		return View::make('/usuario/eliminar');
+		$tUsuario=TUsuario::find($idUsuario);
+
+		$tUsuario->delete();
+
+		return Redirect::to('/usuario/ver');
 	}
 }
 ?>
