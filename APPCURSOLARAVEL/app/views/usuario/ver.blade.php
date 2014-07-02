@@ -13,6 +13,7 @@
 			<th>SEXO</th>
 			<th>FECHA DE REGISTRO</th>
 			<th>FECHA DE MODIFICACIÓN</th>
+			<th></th>
 		</thead>
 		<tbody>
 			@foreach($listaTUsuario as $value)
@@ -26,8 +27,15 @@
 					<td>{{$value->sexo=='1' ? 'Masculino' : 'Femenino'}}</td>
 					<td>{{$value->fechaRegistro}}</td>
 					<td>{{$value->fechaModificacion}}</td>
+					<td><input type="button" id="{{$value->idUsuario}}" value="Editar" onclick="editarUsuario(this.id);"></td>
 				</tr>
 			@endforeach
 		</tbody>
 	</table>
+	<script>
+		function editarUsuario(idUsuario)
+		{
+			window.location.href="/APPCURSOLARAVEL/public/usuario/editar/"+idUsuario;
+		}
+	</script>
 @stop

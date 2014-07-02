@@ -22,9 +22,28 @@ class UsuarioController extends BaseController
 		return View::make('/usuario/registrar');
 	}
 
-	public function actionEditar()
+	public function actionEditar($idUsuario=null)
 	{
-		return View::make('/usuario/editar');
+		if($_POST)
+		{
+			TUsuario::where('idUsuario', '=', Input::get('txtIdUsuario'))->update
+			(
+				array
+				(
+					'nombre' => Input::get('txtNombre'),
+					'apellido' => Input::get('txtApellido'),
+					'correoElectronico' => Input::get('txtCorreoElectronico'),
+					'fechaNacimiento' => Input::get('txtFechaNacimiento'),
+					'sexo' => Input::get('radioSexo')
+				)
+			);
+
+			return Redirect::to('/usuario/ver');
+		}
+
+		$tUsuario=TUsuario::find($idUsuario);
+
+		return View::make('/usuario/editar', array('tUsuario' => $tUsuario));
 	}
 
 	public function actionVer()
